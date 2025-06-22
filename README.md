@@ -16,6 +16,7 @@ We thank the authors of the book *Introduction à la théorie quantique* (Éditi
 We also acknowledge Michel Menou for his contributions to the exercises.  
 Some exercises are reproduced and solved here.  
 We **highly recommend** [this book](https://www.editions-ellipses.fr/accueil/3502-introduction-a-la-theorie-quantique-concepts-pratiques-et-applications-9782340016675.html?srsltid=AfmBOopTo8yyU7xoj-w1zpVewBI4WHael_TjV6SGtQDyMHyDtEbsf3qG) to French-speaking readers who want a rigorous and accessible introduction to quantum physics.
+Note that this repo is done without being proofread by the author, the single source of truth is in the book.
 
 ---
 
