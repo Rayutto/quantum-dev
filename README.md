@@ -57,21 +57,21 @@ quantum-dev/
 
 
 ### 🧠 Topics Covered
-    - Schrödinger equation simulations
-    - Wigner functions
-    - Coherent and cat states
-    - Harmonic oscillator and infinite well
-    - Operator algebra with QuTiP
+- Schrödinger equation simulations
+- Wigner functions
+- Coherent and cat states
+- Harmonic oscillator and infinite well
+- Operator algebra with QuTiP
 
 ⸻
 
 ### 🤝 Contributing
 
 We welcome contributions! To contribute:
-    - Fork the repo
-    - Create a new branch
-    - Make your changes
-    - Submit a pull request
+- Fork the repo
+- Create a new branch
+- Make your changes
+- Submit a pull request
 
 If you’re translating, correcting exercises, or adding new physics notebooks — let us know!
 
