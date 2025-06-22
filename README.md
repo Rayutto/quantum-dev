@@ -39,9 +39,9 @@ We **highly recommend** this book to French-speaking readers who want a rigorous
 (or use Command Palette: Ctrl+Shift+P → Dev Containers: Reopen in Container)
 
 This will:
-	•	Build the container from Dockerfile
-	•	Install Python, QuTiP, Jupyter, and other dependencies
-	•	Mount your local code inside the container
+    - Build the container from Dockerfile
+    - Install Python, QuTiP, Jupyter, and other dependencies
+    - Mount your local code inside the container
 
 You’re ready to code and run simulations!
 
@@ -57,21 +57,21 @@ quantum-dev/
 
 
 ### 🧠 Topics Covered
-	•	Schrödinger equation simulations
-	•	Wigner functions
-	•	Coherent and cat states
-	•	Harmonic oscillator and infinite well
-	•	Operator algebra with QuTiP
+    - Schrödinger equation simulations
+    - Wigner functions
+    - Coherent and cat states
+    - Harmonic oscillator and infinite well
+    - Operator algebra with QuTiP
 
 ⸻
 
 ### 🤝 Contributing
 
 We welcome contributions! To contribute:
-	1.	Fork the repo
-	2.	Create a new branch
-	3.	Make your changes
-	4.	Submit a pull request
+    - Fork the repo
+    - Create a new branch
+    - Make your changes
+    - Submit a pull request
 
 If you’re translating, correcting exercises, or adding new physics notebooks — let us know!
 
