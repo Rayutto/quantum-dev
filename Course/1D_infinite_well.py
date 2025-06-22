@@ -11,7 +11,7 @@ from qutip import Qobj, basis, qeye, identity, mesolve
 
 # ## Parameters definition
 
-# In[ ]:
+# In[22]:
 
 
 # Grid settings
@@ -23,7 +23,7 @@ dx = x[1] - x[0]         # Position resolution
 
 # ## Operator definition
 
-# In[ ]:
+# In[23]:
 
 
 # Construct the finite-difference Laplacian (second derivative)
@@ -40,7 +40,7 @@ H = T + V  # Total Hamiltonian
 
 # ## Eigenstate equation resolution
 
-# In[13]:
+# In[25]:
 
 
 eigenstates = H.eigenstates()
@@ -50,7 +50,7 @@ states = eigenstates[1]
 
 # ## Plot
 
-# In[10]:
+# In[26]:
 
 
 plt.figure(figsize=(8, 5))
