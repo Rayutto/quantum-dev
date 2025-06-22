@@ -1,12 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[6]:
+# In[ ]:
 
 
 import numpy as np
 import matplotlib.pyplot as plt
 from qutip import Qobj, basis, qeye, identity, mesolve
+
+
+# ## Parameters definition
+
+# In[ ]:
 
 
 # Grid settings
@@ -16,7 +21,9 @@ x = np.linspace(0, L, N) # Position grid
 dx = x[1] - x[0]         # Position resolution
 
 
-# In[7]:
+# ## Operator definition
+
+# In[ ]:
 
 
 # Construct the finite-difference Laplacian (second derivative)
@@ -26,28 +33,22 @@ for i in range(N - 1):
 
 T = -0.5 * Qobj(D2) / dx**2  # Kinetic energy operator
 
-
-# In[8]:
-
-
 V = Qobj(np.diag(np.zeros(N)))  # Potential energy operator
-
-
-# In[9]:
-
 
 H = T + V  # Total Hamiltonian
 
-# Get the lowest 5 eigenstates
+
+# ## Eigenstate equation resolution
+
+# In[13]:
+
+
 eigenstates = H.eigenstates()
 energies = eigenstates[0]
 states = eigenstates[1]
 
-# Print energy levels
-print("First 5 energy levels:")
-for i in range(5):
-    print(f"E{i} = {energies[i]:.4f}")
 
+# ## Plot
 
 # In[10]:
 
