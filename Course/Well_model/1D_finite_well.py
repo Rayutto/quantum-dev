@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[2]:
 
 
 import numpy as np
@@ -11,7 +11,7 @@ from qutip import Qobj, basis, qeye, identity, mesolve
 
 # ## Parameters definition
 
-# In[13]:
+# In[3]:
 
 
 # Grid settings
@@ -24,7 +24,7 @@ V0 = 1000                  # Potential level
 
 # ## Operator definition
 
-# In[14]:
+# In[4]:
 
 
 # Construct the finite-difference Laplacian (second derivative)
@@ -48,7 +48,7 @@ H = T + V  # Total Hamiltonian
 
 # ## Eigenstate equation resolution
 
-# In[15]:
+# In[5]:
 
 
 eigenstates = H.eigenstates()
@@ -58,7 +58,7 @@ states = eigenstates[1]
 
 # ## Plot
 
-# In[18]:
+# In[7]:
 
 
 plt.figure(figsize=(8, 5))
