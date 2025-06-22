@@ -39,21 +39,24 @@ We **highly recommend** this book to French-speaking readers who want a rigorous
 (or use Command Palette: Ctrl+Shift+P → Dev Containers: Reopen in Container)
 
 This will:
-    - Build the container from Dockerfile
-    - Install Python, QuTiP, Jupyter, and other dependencies
-    - Mount your local code inside the container
+- Build the container from Dockerfile
+- Install Python, QuTiP, Jupyter, and other dependencies
+- Mount your local code inside the container
 
 You’re ready to code and run simulations!
 
-### 📁 Folder Structure
+## 📁 Folder Structure
+
+<pre><code>
 quantum-dev/
-│
-├── notebooks/          # Jupyter notebooks (Wigner, Fock, Schrödinger)
-├── src/                # Source files for common simulation tools
-├── exercises/          # Corrected problems from the textbook
-├── devcontainer.json   # VS Code container configuration
-├── Dockerfile          # Environment definition
-└── requirements.txt    # Python package list
+├── src/                # Python source code
+├── exercises/          # Solved textbook problems
+├── .devcontainer/      # VS Code container config
+│   ├── devcontainer.json
+│   └── Dockerfile
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
+</code></pre>
 
 
 ### 🧠 Topics Covered
