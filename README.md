@@ -31,7 +31,7 @@ We **highly recommend** this book to French-speaking readers who want a rigorous
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/YOUR_USERNAME/quantum-dev.git
+   git clone https://github.com/rayutto/quantum-dev.git
    cd quantum-dev
 
 2.	Open it in VS Code and click:
