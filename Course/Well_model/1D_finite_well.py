@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
 
 
 import numpy as np
@@ -11,7 +11,7 @@ from qutip import Qobj, basis, qeye, identity, mesolve
 
 # ## Parameters definition
 
-# In[ ]:
+# In[13]:
 
 
 # Grid settings
@@ -19,12 +19,12 @@ N = 200                  # Number of position points
 L = 1.0                  # Length of the well (in arbitrary units)
 x = np.linspace(0, L, N) # Position grid
 dx = x[1] - x[0]         # Position resolution
-V0 = 10                  # Potential level
+V0 = 1000                  # Potential level
 
 
 # ## Operator definition
 
-# In[ ]:
+# In[14]:
 
 
 # Construct the finite-difference Laplacian (second derivative)
@@ -48,7 +48,7 @@ H = T + V  # Total Hamiltonian
 
 # ## Eigenstate equation resolution
 
-# In[25]:
+# In[15]:
 
 
 eigenstates = H.eigenstates()
@@ -58,14 +58,17 @@ states = eigenstates[1]
 
 # ## Plot
 
-# In[26]:
+# In[18]:
 
 
 plt.figure(figsize=(8, 5))
-for i in range(5):
+for i in range(2):
     psi = states[i].full().flatten()
     plt.plot(x, psi / np.sqrt(dx), label=f'n={i+1}')
-plt.title("Wavefunctions in Infinite Square Well")
+# Shade the potential barriers (V ≠ 0)
+plt.axvspan(0, L/3, color='gray', alpha=0.3, label='Potential barrier')
+plt.axvspan(2*L/3, L, color='gray', alpha=0.3)
+plt.title("Wavefunctions in finite Square Well")
 plt.xlabel("Position x")
 plt.ylabel("Wavefunction ψ(x)")
 plt.legend()
