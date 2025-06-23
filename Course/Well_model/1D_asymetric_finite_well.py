@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[1]:
 
 
 import numpy as np
@@ -11,7 +11,7 @@ from qutip import Qobj, basis, qeye, identity, mesolve
 
 # ## Parameters definition
 
-# In[ ]:
+# In[2]:
 
 
 # Grid settings
@@ -25,7 +25,7 @@ V0 = 1000                # Potential level
 
 # ## Operator definition
 
-# In[4]:
+# In[3]:
 
 
 # Construct the finite-difference Laplacian (second derivative)
@@ -39,8 +39,8 @@ T = -0.5 * Qobj(D2) / dx**2  # Kinetic energy operator
 Vx = np.zeros(N)
 
 # Set potential = V0 outside [1/3, 2/3]
-Vx[x < L/3] = V0
-Vx[x > 2*L/3] = V0
+Vx[x < L0] = 0
+Vx[x > L0] = V0
 
 V = Qobj(np.diag(Vx))  # Potential energy operator
 
@@ -49,7 +49,7 @@ H = T + V  # Total Hamiltonian
 
 # ## Eigenstate equation resolution
 
-# In[5]:
+# In[4]:
 
 
 eigenstates = H.eigenstates()
@@ -67,8 +67,7 @@ for i in range(2):
     psi = states[i].full().flatten()
     plt.plot(x, psi / np.sqrt(dx), label=f'n={i+1}')
 # Shade the potential barriers (V ≠ 0)
-plt.axvspan(0, L/3, color='gray', alpha=0.3, label='Potential barrier')
-plt.axvspan(2*L/3, L, color='gray', alpha=0.3)
+plt.axvspan(L0, L, color='gray', alpha=0.3, label='Potential barrier')
 plt.title("Wavefunctions in finite Square Well")
 plt.xlabel("Position x")
 plt.ylabel("Wavefunction ψ(x)")
