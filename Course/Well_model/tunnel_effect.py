@@ -16,16 +16,17 @@ from qutip import Qobj, basis, qeye, identity, mesolve
 
 # Grid settings
 N = 200                  # Number of position points
-L = 1.0                  # Length of the total well (in arbitrary units)
-L0 = 0.5                 # Position of the border between first well region (in arbitrary units) where potential is 0 and the rest
+L = 10.0                 # Total length of the well (in arbitrary units)
+L0 = 5.0                 # Left-side of the well
+L1 = L0 + 0.5            # Right-side of the well
 x = np.linspace(0, L, N) # Position grid
 dx = x[1] - x[0]         # Position resolution
-V0 = 1000                # Potential level
+V0 = 10                 # Potential level
 
 
 # ## Operator definition
 
-# In[ ]:
+# In[3]:
 
 
 # Construct the finite-difference Laplacian (second derivative)
@@ -39,8 +40,7 @@ T = -0.5 * Qobj(D2) / dx**2  # Kinetic energy operator
 Vx = np.zeros(N)
 
 # Set potential
-Vx[x < L0] = 0
-Vx[x > L0] = V0
+Vx[(x > L0) & (x < L1)] = V0
 
 V = Qobj(np.diag(Vx))  # Potential energy operator
 
@@ -59,15 +59,15 @@ states = eigenstates[1]
 
 # ## Plot
 
-# In[7]:
+# In[8]:
 
 
 plt.figure(figsize=(8, 5))
-for i in range(2):
-    psi = states[i].full().flatten()
-    plt.plot(x, psi / np.sqrt(dx), label=f'n={i+1}')
+state_to_plot = 6
+psi = states[state_to_plot].full().flatten()
+plt.plot(x, psi / np.sqrt(dx), label=f'n={state_to_plot}')
 # Shade the potential barriers (V ≠ 0)
-plt.axvspan(L0, L, color='gray', alpha=0.3, label='Potential barrier')
+plt.axvspan(L0, L1, color='gray', alpha=0.3, label='Potential barrier')
 plt.title("Wavefunctions in finite Square Well")
 plt.xlabel("Position x")
 plt.ylabel("Wavefunction ψ(x)")
